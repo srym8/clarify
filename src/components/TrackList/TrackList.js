@@ -10,7 +10,12 @@ function TrackList(props) {
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
-                    <Track name={track}/>
+                    <Track
+                        name={track.name}
+                        artist={track.artist}
+                        album={track.album}
+                        id={track.id}
+                    />
                 )
             })}
         </div>

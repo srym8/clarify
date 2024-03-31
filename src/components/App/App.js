@@ -7,7 +7,7 @@ import SearchResults from "../SearchResults/SearchResults";
 
 
 function App() {
-    const [results, setresults] = useState(["abc", "one mroe time", "jisfyhksjfd"])
+    const [results, setresults] = useState([{name: "abcdefg", artist: "alpha", album: "letters", id: 1}, {name: "one more time", artist: "jack black", album: "kfp", id: 2}, {name: "one more time", artist: "britany", album: "idk", id: 3}])
 
     return (
         <div>
