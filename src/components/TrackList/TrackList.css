@@ -1,0 +1,7 @@
+.TrackList {
+    display: flex;
+}
+
+.Track {
+    flex: 1
+}
