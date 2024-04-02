@@ -4,13 +4,13 @@ import "./Track.css"
 
 function Track(props) {
 
-    const add = () => {
+//  const add = () => {
 
-    }
+//  }
 
-    const remove = () => {
+//  const remove = () => {
 
-    }
+//  }
 
     return (
         <div className="Track">
