@@ -29,7 +29,7 @@ function App() {
                     <SearchBar Search={search}/>
                     <SearchResults results={results}/>
                 </div>
-
+                <div className="Playlist"></div>
             </div>
         </div>
     )

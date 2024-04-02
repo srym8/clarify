@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "./SearchBar.css";
 
 function SearchBar(props) {
-    const handleChange = () => {
-        
+
+    const [query, setQuery] = useState("");
+
+    const handleChange = (e) => {
+        e.preventDefault();
+        setQuery(e.target.value)
     }
 
     const search = () => {
-        
+        props.Search(query);
     }
 
     return (
         <div className="searchBar">
-            <input placeholder="Enter your Favorite Song" onChange={handleChange}></input>
+            <input placeholder="Enter a Song or Artist" onChange={handleChange}></input>
             <button className="sButton" onClick={search}>Search</button>
         </div>
     )
