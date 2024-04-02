@@ -7,15 +7,18 @@ import SearchResults from "../SearchResults/SearchResults";
 
 
 function App() {
-    const [results, setresults] = useState([
-        {name: "abcdef", artist: "alpha", album: "letters", id: 1},
-        {name: "one more time", artist: "jack black", album: "kfp", id: 2},
-        {name: "one more time", artist: "britany", album: "idk", id: 3},
-        {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4}
-    ])
+    const [results, setresults] = useState([])
+
+
 
     const search = () => {
 
+        const query = [{name: "abcdef", artist: "alpha", album: "letters", id: 1},
+        {name: "one more time", artist: "jack black", album: "kfp", id: 2},
+        {name: "one more time", artist: "britany", album: "idk", id: 3},
+        {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4}]
+
+        setresults(query)
     }
 
     return (
