@@ -1,7 +1,9 @@
 .TrackList {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(25%, 1fr));
 }
 
 .Track {
-    flex: 1
+    flex: 1 0 160px;
+    margin: 5px;
 }
