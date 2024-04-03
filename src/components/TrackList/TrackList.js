@@ -15,6 +15,9 @@ function TrackList(props) {
                         name={track.name}
                         artist={track.artist}
                         album={track.album}
+                        addT={props.onAdd}
+                        removeT={props.onRemove}
+                        isPlaylist={props.isPlaylist}
                         id={track.id}
                     />
                     </div>
