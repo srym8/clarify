@@ -1,0 +1,21 @@
+.Playlist {
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(1, 12, 63, 0.7);
+}
+
+.Playlist input {
+    width: 20%;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    border-bottom: 1px solid #6f6f6f;
+    color: white;
+}
+
+.PlaylistSave {
+    width: 10rem;
+    border-radius: 30px;
+    background-color: #6c41ec;
+    color: white;
+}
