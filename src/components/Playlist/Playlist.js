@@ -15,7 +15,7 @@ function Playlist(props) {
             <input defaultValue={"New"} onChange={handle}></input>
             <TrackList
             tracks={props.pTracks}
-            removeT={props.onRemove}
+            onRemove={props.onRemove}
             isPlaylist={true}
             />
             <button className="PlaylistSave" onClick={props.test}>Save To Spotify</button>

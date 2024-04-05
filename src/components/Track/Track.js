@@ -5,20 +5,22 @@ import "./Track.css"
 function Track(props) {
 
     const addT = () => {
-        props.addT()
+        props.onAdd()
     }
 
     const removeT = () => {
-
+        props.onRemove()
     }
 
     const addButtons = () => {
 
         if(props.isPlaylist) {
             return (
-                <button className="action" onClick={addT}>
+                <><button className="action" onClick={addT}>
                     -
-                </button>
+                </button><button className="action" onClick={removeT}>
+                        +
+                    </button></>
             )
         }
 
