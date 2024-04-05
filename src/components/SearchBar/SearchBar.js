@@ -17,7 +17,7 @@ function SearchBar(props) {
 
     return (
         <div className="searchBar">
-            <input placeholder="Enter a Song or Artist" onChange={handleChange}></input>
+            <input name="bar" placeholder="Enter a Song or Artist" onChange={handleChange}></input>
             <button className="sButton" onClick={search}>Search</button>
         </div>
     )
