@@ -45,19 +45,9 @@ function App() {
 
     }
 
-    const test = () => {
+    const onSave = () => {
 
 
-        const pTracks = [{name: "abcdef", artist: "alpha", album: "letters", id: 1},
-        {name: "one more time", artist: "jack black", album: "kfp", id: 2},
-        {name: "one more time", artist: "britany", album: "idk", id: 3},
-        {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4},
-        {name: "abcdef", artist: "alpha", album: "letters", id: 1},
-        {name: "one more time", artist: "jack black", album: "kfp", id: 2},
-        {name: "one more time", artist: "britany", album: "idk", id: 3},
-        {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4}]
-
-        setPTracks(pTracks)
 
     }
 
@@ -77,7 +67,7 @@ function App() {
                     name={pName}
                     playlistNameChange={hPName}
                     pTracks={pTracks}
-                    test={test}
+                    savePlaylist={onSave}
                     onRemove={removeTrack}
                     />
 
