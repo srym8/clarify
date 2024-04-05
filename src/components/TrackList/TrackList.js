@@ -12,9 +12,7 @@ function TrackList(props) {
                 return (
                     <div className="Track">
                     <Track
-                        name={track.name}
-                        artist={track.artist}
-                        album={track.album}
+                        track={track}
                         onAdd={props.onAdd}
                         onRemove={props.onRemove}
                         isPlaylist={props.isPlaylist}
