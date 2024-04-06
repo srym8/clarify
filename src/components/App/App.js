@@ -6,6 +6,8 @@ import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 
+import Spotify from "../../Spotify/Spotify";
+
 
 function App() {
 
@@ -15,18 +17,14 @@ function App() {
 
 
 
-    const search = () => {
+    const search = (query) => {
 
-        const query = [{name: "abcdef", artist: "alpha", album: "letters", id: 1, uri: "ksbt9d"},
-        {name: "one more time", artist: "jack black", album: "kfp", id: 2, uri: "jdye6r"},
-        {name: "one more time", artist: "britany", album: "idk", id: 3, uri: "c7eng9"},
-        {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4, uri: "7wnofl"},
-        {name: "Virtual Insanity", artist: "Jamiroquai", album: "Travelling Without Moving", id: 5, uri: "41nc9g"}]
+        Spotify.search(query).then(setresults)
 
-        setresults(query)
     }
 
     const addTrack = (track) => {
+
         const alreadyThere = pTracks.some((t) => t.id === track.id);
 
         if (alreadyThere) {
@@ -37,10 +35,11 @@ function App() {
     }
 
     const removeTrack = (track) => {
+
         setPTracks((prevT) => prevT.filter((t) => t.id !== track.id))
     }
 
-    const hPName = (n) => {
+    const uPName = (n) => {
 
         setPName(n)
 
@@ -66,7 +65,7 @@ function App() {
 
                     <Playlist
                     name={pName}
-                    playlistNameChange={hPName}
+                    playlistNameChange={uPName}
                     pTracks={pTracks}
                     savePlaylist={onSave}
                     onRemove={removeTrack}
