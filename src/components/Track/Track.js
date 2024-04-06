@@ -33,9 +33,8 @@ function Track(props) {
         <div className="Track">
             <div className="information">
                 <h3>{props.track.name}</h3>
-                <p>{props.track.artist}</p>
+                <p>{props.track.artists}</p>
                 <p>{props.track.album}</p>
-                <p>{props.track.id}</p>
             </div>
             {addButtons()}
         </div>
