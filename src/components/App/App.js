@@ -20,7 +20,9 @@ function App() {
         const query = [{name: "abcdef", artist: "alpha", album: "letters", id: 1},
         {name: "one more time", artist: "jack black", album: "kfp", id: 2},
         {name: "one more time", artist: "britany", album: "idk", id: 3},
-        {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4}]
+        {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4},
+        {name: "Virtual Insanity", artist: "Jamiroquai", album: "Travelling Without Moving", id: 5},
+        {}]
 
         setresults(query)
     }
