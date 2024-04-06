@@ -21,8 +21,7 @@ function App() {
         {name: "one more time", artist: "jack black", album: "kfp", id: 2},
         {name: "one more time", artist: "britany", album: "idk", id: 3},
         {name: "Axel F", artist: "Crazy Frog", album: "idk", id: 4},
-        {name: "Virtual Insanity", artist: "Jamiroquai", album: "Travelling Without Moving", id: 5},
-        {}]
+        {name: "Virtual Insanity", artist: "Jamiroquai", album: "Travelling Without Moving", id: 5}]
 
         setresults(query)
     }
@@ -41,7 +40,7 @@ function App() {
         setPTracks((prevT) => prevT.filter((t) => t.id !== track.id))
     }
 
-    const hPName = (n="woah") => {
+    const hPName = (n) => {
 
         setPName(n)
 
