@@ -16,11 +16,9 @@ function Track(props) {
 
         if(props.isPlaylist) {
             return (
-                <><button className="action" onClick={removeT}>
+                <button className="action" onClick={removeT}>
                     -
-                </button><button className="action" onClick={addT}>
-                        +
-                    </button></>
+                </button>
             )
         }
 
