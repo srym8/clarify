@@ -16,7 +16,7 @@ function SearchBar(props) {
     }
 
     return (
-        <div className="searchBar">
+        <div className="searchBar" data-testid="searchbar-1">
             <input name="bar" placeholder="Enter a Song or Artist" onChange={handleChange}></input>
             <button className="sButton" onClick={search}>Search</button>
         </div>
