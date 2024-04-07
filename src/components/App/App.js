@@ -58,7 +58,7 @@ function App() {
 
     return (
         <div>
-            <div className="App">
+            <div className="App" data-testid="app-1">
                 <h1>Clarify</h1>
                 <div className="Search">
 
