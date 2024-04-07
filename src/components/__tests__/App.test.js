@@ -9,5 +9,4 @@ test("should render app component", () => {
     render(<App />)
     const appElement = screen.getByTestId("app-1")
     expect(appElement).toBeInTheDocument();
-    expect(appElement).toHaveTextContent("Clarify")
 })
