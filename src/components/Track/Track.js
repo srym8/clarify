@@ -30,7 +30,7 @@ function Track(props) {
     }
 
     return (
-        <div className="Track">
+        <div className="Track" data-testid="track-1">
             <div className="information">
                 <h3>{props.track.name}</h3>
                 <p>{props.track.artists}</p>
