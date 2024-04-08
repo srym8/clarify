@@ -5,7 +5,7 @@ afterEach(() => {
     cleanup();
 })
 
-test("should render app component", () => {
+test("renders app component", () => {
     render(<App />)
     const appElement = screen.getByTestId("app-1")
     expect(appElement).toBeInTheDocument();

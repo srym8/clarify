@@ -5,7 +5,7 @@ afterEach(() => {
     cleanup();
 })
 
-test("renders a SearchBar component", () => {
+test("renders searchbar component", () => {
     render(<SearchBar />)
     const SearchBarElement = screen.getByTestId("searchbar-1")
     expect(SearchBarElement).toBeInTheDocument();
