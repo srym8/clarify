@@ -8,7 +8,6 @@ import Playlist from "../Playlist/Playlist";
 
 import Spotify from "../../Spotify/Spotify";
 
-
 function App() {
 
     const [results, setresults] = useState([])
