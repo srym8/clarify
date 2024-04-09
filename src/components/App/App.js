@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./App.css";
 
@@ -59,6 +60,7 @@ function App() {
         <div>
             <div className="App" data-testid="app-1">
                 <h1>Clarify</h1>
+                <Link to="/">Back to login</Link>
                 <div className="Search">
 
                     <SearchBar Search={search}/>
