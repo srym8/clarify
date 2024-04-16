@@ -27,7 +27,6 @@ function Login() {
 
     return (
         <div className='Login'>
-            <h1>Clarify</h1>
             <form id='login-form' onSubmit={handleSubmit}>
                 <input className='field' placeholder='Enter Email' value={email} onChange={handleEmail}></input>
                 <input className='field' placeholder='Enter Password' value={password} onChange={handlePassword}></input>
