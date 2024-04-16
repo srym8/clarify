@@ -26,6 +26,8 @@ function Login() {
     }
 
     return (
+        <>
+        <h1>CLarify</h1>
         <div className='Login'>
             <form id='login-form' onSubmit={handleSubmit}>
                 <input className='field' placeholder='Enter Email' value={email} onChange={handleEmail}></input>
@@ -34,6 +36,7 @@ function Login() {
                 <Link to="/app">To app</Link>
             </form>
         </div>
+        </>
     )
 }
 
