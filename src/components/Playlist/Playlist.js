@@ -13,12 +13,12 @@ function Playlist(props) {
     return (
         <div className="Playlist" data-testid="playlist-1">
             <input defaultValue={"New"} onChange={handle}></input>
+            <button className="PlaylistSave" onClick={props.savePlaylist}>Save To Spotify</button>
             <TrackList
             tracks={props.pTracks}
             onRemove={props.onRemove}
             isPlaylist={true}
             />
-            <button className="PlaylistSave" onClick={props.savePlaylist}>Save To Spotify</button>
         </div>
     )
 }
