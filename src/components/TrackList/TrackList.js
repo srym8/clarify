@@ -7,6 +7,8 @@ import Track from "../Track/Track";
 function TrackList(props) {
 
     return (
+        <>
+        <button>SORT</button>
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
@@ -22,6 +24,7 @@ function TrackList(props) {
                 )
             })}
         </div>
+        </>
     )
 }
 
