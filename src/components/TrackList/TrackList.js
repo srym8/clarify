@@ -6,9 +6,13 @@ import Track from "../Track/Track";
 
 function TrackList(props) {
 
+    function sort() {
+        
+    }
+
     return (
         <>
-        <button>SORT</button>
+        <button onClick={sort}>SORT</button>
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
