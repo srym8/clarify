@@ -21,9 +21,6 @@ function App() {
 
         Spotify.search(query).then(setresults)
 
-        if(results.length !== 0) {
-            document.querySelector(".SearchResults").style.display = "block";
-        };
     }
 
     const addTrack = (track) => {
