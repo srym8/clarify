@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 
 import "./Sort.css";
 
+import TrackList from "../TrackList/TrackList";
+
 function SortTest() {
 
     const [og, setOg] = useState([])
