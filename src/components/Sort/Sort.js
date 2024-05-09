@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 import "./Sort.css";
 
@@ -94,6 +95,7 @@ function SortTest() {
         </div>
 
         </div>
+        <Link to="/app">Back to App</Link>
         </>
     )
 }
