@@ -11,6 +11,7 @@ function SortTest() {
     const [sorted, setSorted] = useState([])
 
     const [trackies, setTrackies] = useState([])
+    const [names, setNames] = useState([])
 
     function merge(left, right) {
         let resultArray = [],
@@ -79,13 +80,25 @@ function SortTest() {
 
         setTrackies([])
 
-        const mock = [{name: "abcdef", artists: "alpha", album: "letters", id: 1, uri: "ksbt9d"},
-        {name: "one more time", artists: "jack black", album: "kfp", id: 2, uri: "jdye6r"},
+        const mock = [
+            {name: "one more time", artists: "jack black", album: "kfp", id: 2, uri: "jdye6r"},
+        {name: "abcdef", artists: "alpha", album: "letters", id: 1, uri: "ksbt9d"},
         {name: "one more time", artists: "britany", album: "idk", id: 3, uri: "c7eng9"},
         {name: "Axel F", artists: "Crazy Frog", album: "idk", id: 4, uri: "7wnofl"},
         {name: "Virtual Insanity", artists: "Jamiroquai", album: "Travelling Without Moving", id: 5, uri: "41nc9g"}]
 
         setTrackies(mock)
+    }
+
+    function sort() {
+
+        setNames([])
+
+        setNames(trackies.map((track) => {
+            return track.name
+        }))
+
+
     }
 
     return (
@@ -113,7 +126,9 @@ function SortTest() {
 
         </div>
         <button onClick={handleTracksies}>Set Trackies</button>
-        <TrackList tracks={trackies} isPlaylist={false} istest={true}/>
+
+        <TrackList tracks={trackies} isPlaylist={false} istest={true} sort={sort}/>
+        <p>{names}</p>
         <Link to="/app">Back to App</Link>
         </>
     )

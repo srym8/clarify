@@ -6,14 +6,14 @@ import Track from "../Track/Track";
 
 function TrackList(props) {
 
-    function sort() {
+    //function sort() {
         
-    }
+    //}
 
     const addSortButtonForTesting = () => {
         if (props.istest) {
             return (
-                <button onClick={sort}>SORT</button>
+                <button onClick={props.sort}>SORT</button>
             )
         }
     }
