@@ -1,0 +1,9 @@
+.sorting {
+    display: flex;
+    justify-content: center;
+}
+
+.ns {
+    margin: 10px;
+    float: left;
+}
