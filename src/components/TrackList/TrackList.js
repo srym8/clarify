@@ -10,9 +10,17 @@ function TrackList(props) {
         
     }
 
+    const addSortButtonForTesting = () => {
+        if (props.istest) {
+            return (
+                <button onClick={sort}>SORT</button>
+            )
+        }
+    }
+
     return (
         <>
-        <button onClick={sort}>SORT</button>
+        {addSortButtonForTesting()}
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (

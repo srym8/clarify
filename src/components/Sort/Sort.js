@@ -113,7 +113,7 @@ function SortTest() {
 
         </div>
         <button onClick={handleTracksies}>Set Trackies</button>
-        <TrackList tracks={trackies} isPlaylist={false}/>
+        <TrackList tracks={trackies} isPlaylist={false} istest={true}/>
         <Link to="/app">Back to App</Link>
         </>
     )
