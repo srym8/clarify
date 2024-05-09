@@ -10,6 +10,8 @@ function SortTest() {
     const [og, setOg] = useState([])
     const [sorted, setSorted] = useState([])
 
+    const [trackies, setTrackies] = useState([])
+
     function merge(left, right) {
         let resultArray = [],
             leftIndex = 0,
@@ -73,6 +75,19 @@ function SortTest() {
 
     }
 
+    function handleTracksies() {
+
+        setTrackies([])
+
+        const mock = [{name: "abcdef", artists: "alpha", album: "letters", id: 1, uri: "ksbt9d"},
+        {name: "one more time", artists: "jack black", album: "kfp", id: 2, uri: "jdye6r"},
+        {name: "one more time", artists: "britany", album: "idk", id: 3, uri: "c7eng9"},
+        {name: "Axel F", artists: "Crazy Frog", album: "idk", id: 4, uri: "7wnofl"},
+        {name: "Virtual Insanity", artists: "Jamiroquai", album: "Travelling Without Moving", id: 5, uri: "41nc9g"}]
+
+        setTrackies(mock)
+    }
+
     return (
         <>
         <h1>Testing the merge sort</h1>
@@ -97,6 +112,8 @@ function SortTest() {
         </div>
 
         </div>
+        <button onClick={handleTracksies}>Set Trackies</button>
+        <TrackList tracks={trackies} isPlaylist={false}/>
         <Link to="/app">Back to App</Link>
         </>
     )
