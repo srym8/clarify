@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App/App';
 import Login from "./components/Login/Login";
+import SortTest from './components/Sort/Sort';
 import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 import reportWebVitals from './reportWebVitals';
 
@@ -17,6 +18,10 @@ const router = createBrowserRouter([{
     path: "/app",
     element: <App />
   },
+  {
+    path: "sort",
+    element: <SortTest />
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
