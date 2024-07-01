@@ -59,15 +59,19 @@ function App() {
     return (
         <div>
             <div className="App" data-testid="app-1">
+
                 <h1>Clarify</h1>
+
                 <Link to="/">Back to login</Link>
                 <Link to="/sort">To Testing</Link>
+
                 <div className="Search">
 
                     <SearchBar Search={search}/>
                     <SearchResults results={results} onAdd={addTrack}/>
 
                 </div>
+                
                 <div className="Playlist">
 
                     <Playlist
