@@ -9,6 +9,8 @@ import Playlist from "../Playlist/Playlist";
 
 import Spotify from "../../Spotify/Spotify";
 
+import mergeSort from "../Sort/SortFunc";
+
 function App() {
 
     const [results, setresults] = useState([])
@@ -56,6 +58,92 @@ function App() {
 
     }
 
+    const sortResults = () => {
+        const ref = {}
+
+        for (let i of results) {
+            ref[i.name] = i.name[0].charCodeAt(0)
+        }
+
+        let namesB = []
+
+        namesB = results.map((track) => {
+            return track.name
+        })
+
+        let firstL = []
+
+        firstL = namesB.map((name) => {
+            return name[0]
+        })
+
+        let codes = []
+
+        codes = firstL.map((letter) => {
+            return letter.charCodeAt(0)
+        })
+
+        const f = mergeSort(codes) // DOING THE SORT
+
+        const sortedTracks = []
+
+        for (let i in f) {
+            const code = f[i]
+
+            for (let track in results) {
+                const sTrack = results[track]
+                if (sTrack.name[0].charCodeAt(0) === code) {
+                    sortedTracks.push(sTrack)
+                }
+            }
+        }
+
+        setresults(sortedTracks)
+    }
+
+    const sortPTracks = () => {
+        const ref = {}
+
+        for (let i of pTracks) {
+            ref[i.name] = i.name[0].charCodeAt(0)
+        }
+
+        let namesB = []
+
+        namesB = pTracks.map((track) => {
+            return track.name
+        })
+
+        let firstL = []
+
+        firstL = namesB.map((name) => {
+            return name[0]
+        })
+
+        let codes = []
+
+        codes = firstL.map((letter) => {
+            return letter.charCodeAt(0)
+        })
+
+        const f = mergeSort(codes) // DOING THE SORT
+
+        const sortedTracks = []
+
+        for (let i in f) {
+            const code = f[i]
+
+            for (let track in pTracks) {
+                const sTrack = pTracks[track]
+                if (sTrack.name[0].charCodeAt(0) === code) {
+                    sortedTracks.push(sTrack)
+                }
+            }
+        }
+
+        setPTracks(sortedTracks)
+    }
+
     return (
         <div>
             <div className="App" data-testid="app-1">
@@ -68,7 +156,7 @@ function App() {
                 <div className="Search">
 
                     <SearchBar Search={search}/>
-                    <SearchResults results={results} onAdd={addTrack}/>
+                    <SearchResults results={results} onAdd={addTrack} sort={sortResults} />
 
                 </div>
 
@@ -80,6 +168,7 @@ function App() {
                     pTracks={pTracks}
                     savePlaylist={onSave}
                     onRemove={removeTrack}
+                    sort={sortPTracks}
                     />
 
                 </div>

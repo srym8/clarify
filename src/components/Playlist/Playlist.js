@@ -17,6 +17,7 @@ function Playlist(props) {
             <input defaultValue={"New"} onChange={handle}></input>
             <button className="PlaylistSave" onClick={props.savePlaylist}>Save To Spotify</button>
             <TrackList
+            sort={props.sort}
             tracks={props.pTracks}
             onRemove={props.onRemove}
             isPlaylist={true}

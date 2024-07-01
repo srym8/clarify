@@ -6,21 +6,9 @@ import Track from "../Track/Track";
 
 function TrackList(props) {
 
-    //function sort() {
-        
-    //}
-
-    const addSortButtonForTesting = () => {
-        if (props.istest) {
-            return (
-                <button onClick={props.sort}>SORT</button>
-            )
-        }
-    }
-
     return (
         <>
-        {addSortButtonForTesting()}
+        <button onClick={props.sort}>SORT</button>
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
