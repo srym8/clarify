@@ -7,9 +7,6 @@ import TrackList from "../TrackList/TrackList";
 
 function SortTest() {
 
-    const [og, setOg] = useState([])
-    const [sorted, setSorted] = useState([])
-
     const [trackies, setTrackies] = useState([])
 
     function merge(left, right) {
@@ -52,29 +49,6 @@ function SortTest() {
         );
     }
 
-    function getRandomInt(max) {
-        return Math.floor(Math.random() * max);
-      }
-
-    function doSort() {
-
-        setOg([])
-        setSorted([])
-
-        const randomNumbers = []
-
-        for (let i = 0;i < 6;i++) {
-            const randomNumber = getRandomInt((i+1)*6)
-            randomNumbers.push(randomNumber)
-        }
-
-        setOg(randomNumbers)
-
-        const answer = mergeSort(randomNumbers)
-        setSorted(answer)
-
-    }
-
     function handleTracksies() {
 
         setTrackies([])
@@ -115,7 +89,7 @@ function SortTest() {
             return letter.charCodeAt(0)
         })
 
-        const f = mergeSort(codes) // Doing the sort
+        const f = mergeSort(codes) // DOING THE SORT
 
         const sortedTracks = []
 
@@ -137,27 +111,7 @@ function SortTest() {
     return (
         <>
         <h1>Testing the merge sort</h1>
-        <div className="sorting">
 
-        <div className="ns">
-        <p>Before Sorting {og.map((n) => {
-            return (
-                <p>{n}</p>
-            )
-        })}</p>
-        </div>
-
-        <button className="ns" onClick={doSort}>SORT</button>
-
-        <div className="ns">
-        <p>After Sorting{sorted.map((n) => {
-            return (
-                <p>{n}</p>
-            )
-        })}</p>
-        </div>
-
-        </div>
         <button onClick={handleTracksies}>Set Trackies</button>
 
         <TrackList tracks={trackies} isPlaylist={false} istest={true} sort={sort}/>
