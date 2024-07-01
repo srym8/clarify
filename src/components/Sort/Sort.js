@@ -11,7 +11,6 @@ function SortTest() {
     const [sorted, setSorted] = useState([])
 
     const [trackies, setTrackies] = useState([])
-    const [names, setNames] = useState([])
 
     function merge(left, right) {
         let resultArray = [],
@@ -81,7 +80,7 @@ function SortTest() {
         setTrackies([])
 
         const mock = [
-            {name: "one more time", artists: "jack black", album: "kfp", id: 2, uri: "jdye6r"},
+        {name: "One more time", artists: "jack black", album: "kfp", id: 2, uri: "jdye6r"},
         {name: "abcdef", artists: "alpha", album: "letters", id: 1, uri: "ksbt9d"},
         {name: "one more time", artists: "britany", album: "idk", id: 3, uri: "c7eng9"},
         {name: "Axel F", artists: "Crazy Frog", album: "idk", id: 4, uri: "7wnofl"},
@@ -92,12 +91,46 @@ function SortTest() {
 
     function sort() {
 
-        setNames([])
+        const ref = {}
 
-        setNames(trackies.map((track) => {
+        for (let i of trackies) {
+            ref[i.name] = i.name[0].charCodeAt(0)
+        }
+
+        let namesB = []
+
+        namesB = trackies.map((track) => {
             return track.name
-        }))
+        })
 
+        let firstL = []
+
+        firstL = namesB.map((name) => {
+            return name[0]
+        })
+
+        let codes = []
+
+        codes = firstL.map((letter) => {
+            return letter.charCodeAt(0)
+        })
+
+        const f = mergeSort(codes) // Doing the sort
+
+        const sortedTracks = []
+
+        for (let i in f) {
+            const code = f[i]
+
+            for (let track in trackies) {
+                const sTrack = trackies[track]
+                if (sTrack.name[0].charCodeAt(0) === code) {
+                    sortedTracks.push(sTrack)
+                }
+            }
+        }
+
+        setTrackies(sortedTracks)
 
     }
 
@@ -128,7 +161,6 @@ function SortTest() {
         <button onClick={handleTracksies}>Set Trackies</button>
 
         <TrackList tracks={trackies} isPlaylist={false} istest={true} sort={sort}/>
-        <p>{names}</p>
         <Link to="/app">Back to App</Link>
         </>
     )
