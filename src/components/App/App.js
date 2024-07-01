@@ -71,7 +71,7 @@ function App() {
                     <SearchResults results={results} onAdd={addTrack}/>
 
                 </div>
-                
+
                 <div className="Playlist">
 
                     <Playlist
@@ -83,6 +83,7 @@ function App() {
                     />
 
                 </div>
+                
             </div>
         </div>
     )
