@@ -2,6 +2,9 @@ import React from "react";
 
 import "./Track.css"
 
+import AddTrackButton from "../Buttons/AddTrackButton";
+import RemoveTrackButton from "../Buttons/RemoveTrackButton";
+
 function Track(props) {
 
     const addT = () => {
@@ -16,20 +19,16 @@ function Track(props) {
 
         if(props.isPlaylist) {
             return (
-                <button className="action" onClick={removeT}>
-                    -
-                </button>
+                <RemoveTrackButton action={removeT}/>
             )
         }
 
         return (
-            <button className="action" onClick={addT}>
-                +
-            </button>
+            <AddTrackButton action={addT}/>
         )
     }
 
-    return (
+     return (
         <div className="Track" data-testid="track-1">
             <div className="information">
                 <h3>{props.track.name}</h3>

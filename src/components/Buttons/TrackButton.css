@@ -1,8 +1,4 @@
-.Track {
-    color: white;
-}
-
-.frame {
+  .frame {
     width: 90%;
     margin: 40px auto;
     text-align: center;
@@ -45,7 +41,7 @@
   }
   .btn-12 span {
     background: rgb(0,172,238);
-  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(30,215,96,1) 100%);
     display: block;
     position: absolute;
     width: 130px;
