@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 
-import Spotify from '../../Spotify/Spotify';
-
 import "./Login.css";
 
 function Login() {
