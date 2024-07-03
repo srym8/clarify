@@ -3,12 +3,13 @@ import React from "react";
 import "./TrackList.css";
 
 import Track from "../Track/Track";
+import SortResults from "../Buttons/Sort/SortResults/SortResultsButton";
 
 function TrackList(props) {
 
     return (
         <>
-        <button onClick={props.sort}>SORT</button>
+        <SortResults action={props.sort}/>
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
