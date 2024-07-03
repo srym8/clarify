@@ -6,6 +6,7 @@ import "./Sort.css";
 import mergeSort from "./SortFunc";
 import TrackList from "../TrackList/TrackList";
 import AddTrackButton from "../Buttons/AddTrackButton";
+import SortResults from "../Buttons/Sort/SortResults/SortResultsButton";
 
 function SortTest() {
 
@@ -79,6 +80,8 @@ function SortTest() {
         <TrackList tracks={trackies} isPlaylist={false} istest={true} sort={sort}/>
         <p>Beginning of Button Testing...</p>
         <AddTrackButton />
+        <p>Beginning of Sort Button Testing</p>
+        <SortResults />
         <Link to="/app">Back to App</Link>
         </>
     )
