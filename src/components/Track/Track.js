@@ -31,9 +31,9 @@ function Track(props) {
      return (
         <div className="Track" data-testid="track-1">
             <div className="information">
-                <h3>{props.track.name}</h3>
-                <p>{props.track.artists}</p>
-                <p>{props.track.album}</p>
+                <h3>🎼 {props.track.name}</h3>
+                <p>✍️ {props.track.artists}</p>
+                <p>💿 {props.track.album}</p>
             </div>
             {addButtons()}
         </div>
