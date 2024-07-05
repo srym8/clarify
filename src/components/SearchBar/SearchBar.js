@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 import "./SearchBar.css";
 
@@ -14,6 +14,22 @@ function SearchBar(props) {
     const search = () => {
         props.Search(query);
     }
+
+    const docRef = useRef(document)
+
+    const handleEnter = (e) => {
+        if (e.key === 'Enter') {
+            search()
+        }
+    }
+
+    useEffect(() => {
+        docRef.current.addEventListener("keydown", handleEnter)
+
+        return () => {
+            docRef.current.removeEventListener("keydown", handleEnter)
+        }
+    })
 
     return (
         <div className="searchBar" data-testid="searchbar-1">
