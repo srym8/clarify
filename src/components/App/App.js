@@ -18,7 +18,6 @@ function App() {
     const [pTracks, setPTracks] = useState([])
 
 
-
     const search = (query) => {
 
         Spotify.search(query).then(setresults)
@@ -142,13 +141,34 @@ function App() {
         }
 
         setPTracks(sortedTracks)
+
+    }
+
+    const removeDuplicates = () => {
+        let ids = [];
+        let final = [];
+
+        results.forEach(function(track) {
+            ids.push(track.id)
+        })
+        console.log(ids)
+        
+        let uniqueIds = [...new Set(ids)];
+        console.log(uniqueIds)
+
+        for(let id of uniqueIds) {
+            let track = results.find((track) => track.id === id)
+            final.push(track)
+        }
+
+        setresults(final)
     }
 
     return (
         <div>
             <div className="App" data-testid="app-1">
 
-                <h1>Clarify</h1>
+                <h1>Clarify DO LOGIN AND REMOVE DUPLICATES</h1>
 
                 <Link to="/">Back to login</Link>
                 <Link to="/sort">To Testing</Link>
@@ -156,7 +176,7 @@ function App() {
                 <div className="Search">
 
                     <SearchBar Search={search}/>
-                    <SearchResults results={results} onAdd={addTrack} sort={sortResults} />
+                    <SearchResults results={results} onAdd={addTrack} sort={sortResults} remove={removeDuplicates} />
 
                 </div>
 

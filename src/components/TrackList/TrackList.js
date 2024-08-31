@@ -4,12 +4,28 @@ import "./TrackList.css";
 
 import Track from "../Track/Track";
 import SortResults from "../Buttons/Sort/SortResults/SortResultsButton";
+import RemoveDuplicates from "../Buttons/RemoveDuplicates/RemoveDuplicates";
 
 function TrackList(props) {
 
+    const addRemoveDuplicates = () => {
+        if(props.isresults) {
+            return (
+                <div className="buttonRow">
+                <SortResults action={props.sort} />
+                <RemoveDuplicates remove={props.remove}/>
+                </div>
+            )
+        }
+
+        return (
+            <SortResults action={props.sort} />
+        )
+    }
+
     return (
         <>
-        <SortResults action={props.sort}/>
+        {addRemoveDuplicates()}
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
