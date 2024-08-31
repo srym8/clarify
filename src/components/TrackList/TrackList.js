@@ -9,7 +9,7 @@ import RemoveDuplicates from "../Buttons/RemoveDuplicates/RemoveDuplicates";
 function TrackList(props) {
 
     const addRemoveDuplicates = () => {
-        if(props.isresults) {
+        if(props.needsRem) {
             return (
                 <div className="buttonRow">
                 <SortResults action={props.sort} />

@@ -8,7 +8,7 @@ function SearchResults(props) {
     return (
         <div className="SearchResults">
             <h2>Search Results</h2>
-            <TrackList sort={props.sort} remove={props.remove} isresults={true} tracks={props.results} onAdd={props.onAdd} isPlaylist={false}/>
+            <TrackList sort={props.sort} remove={props.remove} needsRem={true} tracks={props.results} onAdd={props.onAdd} isPlaylist={false}/>
         </div>
     )
 }
