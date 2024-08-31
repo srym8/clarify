@@ -2,8 +2,8 @@ import React from "react";
 
 import "./Track.css"
 
-import AddTrackButton from "../Buttons/AddTrackButton";
-import RemoveTrackButton from "../Buttons/RemoveTrackButton";
+import AddTrackButton from "../Buttons/TrackButtons/AddTrackButton";
+import RemoveTrackButton from "../Buttons/TrackButtons/RemoveTrackButton";
 
 function Track(props) {
 
