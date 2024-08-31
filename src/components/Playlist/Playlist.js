@@ -18,6 +18,7 @@ function Playlist(props) {
             <button className="PlaylistSave" onClick={props.savePlaylist}>Save To Spotify</button>
             <TrackList
             sort={props.sort}
+            remove={props.removePlaylist}
             needsRem={true}
             tracks={props.pTracks}
             onRemove={props.onRemove}

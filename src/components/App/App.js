@@ -144,7 +144,7 @@ function App() {
 
     }
 
-    const removeDuplicates = () => {
+    const removeResultsDuplicates = () => {
         let ids = [];
         let final = [];
 
@@ -164,6 +164,26 @@ function App() {
         setresults(final)
     }
 
+    const removePlaylistDuplicates = () => {
+        let ids = [];
+        let final = [];
+
+        pTracks.forEach(function(track) {
+            ids.push(track.id)
+        })
+        console.log(ids)
+        
+        let uniqueIds = [...new Set(ids)];
+        console.log(uniqueIds)
+
+        for(let id of uniqueIds) {
+            let track = pTracks.find((track) => track.id === id)
+            final.push(track)
+        }
+
+        setPTracks(final)
+    }
+
     return (
         <div>
             <div className="App" data-testid="app-1">
@@ -176,7 +196,7 @@ function App() {
                 <div className="Search">
 
                     <SearchBar Search={search}/>
-                    <SearchResults results={results} onAdd={addTrack} sort={sortResults} remove={removeDuplicates} />
+                    <SearchResults results={results} onAdd={addTrack} sort={sortResults} removeResults={removeResultsDuplicates} />
 
                 </div>
 
@@ -189,6 +209,7 @@ function App() {
                     savePlaylist={onSave}
                     onRemove={removeTrack}
                     sort={sortPTracks}
+                    removePlaylist={removePlaylistDuplicates}
                     />
 
                 </div>
