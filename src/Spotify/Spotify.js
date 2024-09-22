@@ -3,6 +3,11 @@ const redirectUri = 'https://clarify42.netlify.app/app';
 let accessToken;
 
 const Spotify = {
+  login() {
+    const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}&show_dialog=true`;
+    window.location.href = accessUrl;
+  },
+
   getAccessToken() {
     if (accessToken) {
       return accessToken;

@@ -6,6 +6,7 @@ import "./App.css";
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
+import SpotifyLogin from "../Buttons/SpotifyLogin/SpotifyLogin";
 
 import Spotify from "../../Spotify/Spotify";
 
@@ -196,6 +197,7 @@ function App() {
                 <div className="Search">
 
                     <SearchBar Search={search}/>
+                    <SpotifyLogin />
                     <SearchResults results={results} onAdd={addTrack} sort={sortResults} removeResults={removeResultsDuplicates} />
 
                 </div>

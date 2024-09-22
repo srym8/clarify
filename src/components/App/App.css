@@ -18,3 +18,10 @@ h1 {
     background-position: center;
     background-attachment: fixed;
 }
+
+.LoginButton {
+  position: absolute;
+  top: 25px;
+  right: 0;
+  padding: 10px;
+}
