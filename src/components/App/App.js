@@ -189,7 +189,7 @@ function App() {
         <div>
             <div className="App" data-testid="app-1">
 
-                <h1>Clarify DO LOGIN AND REMOVE DUPLICATES</h1>
+                <h1>Clarify DO LOGIN AND REMOVE DUPLICATES, FIX RELOGGING GETS CORRECT TOKEN</h1>
 
                 <Link to="/">Back to login</Link>
                 <Link to="/sort">To Testing</Link>
