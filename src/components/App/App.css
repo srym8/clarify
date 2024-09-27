@@ -19,7 +19,7 @@ h1 {
     background-attachment: fixed;
 }
 
-.LoginButton {
+.LoginButtonDiv {
   position: absolute;
   top: 25px;
   right: 0;

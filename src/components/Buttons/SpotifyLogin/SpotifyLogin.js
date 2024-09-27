@@ -13,8 +13,8 @@ function SpotifyLogin() {
     }
 
     return (
-        <div className='LoginButton'>
-            <button onClick={handleLogin}>SpotifyLogin</button>
+        <div className='LoginButtonDiv'>
+            <button className='LButton' onClick={handleLogin}>SpotifyLogin</button>
         </div>
     )
 }

@@ -1,11 +1,13 @@
-button {
-    border-radius: 54px;
+.LButton {
+  border-radius: 54px;
+  width: 300px;
   text-align: center;
   background-color: #22c44a;
   transition: background-color .25s;
+  cursor: pointer;
 }
 
-button:hover {
+.LButton:hover {
     color: white;
     background-color: #010c3f;
 }
