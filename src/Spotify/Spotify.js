@@ -5,24 +5,29 @@ let accessToken;
 const Spotify = {
 
   getAccessToken() {
-    if (accessToken) {
-      accessToken = '';
+    if (!accessToken) {
+      const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
+      const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
+    
+      if (accessTokenMatch && expiresInMatch) {
+        // Extract the access token and expiration time from the URL
+        accessToken = accessTokenMatch[1];
+        const expiresIn = Number(expiresInMatch[1]);
+    
+        // Set a timeout to clear the token when it expires
+        window.setTimeout(() => accessToken = '', expiresIn * 1000);
+    
+        // Clean the URL by removing the token and expiration info for security reasons
+        window.history.pushState('Access Token', null, '/');
+    
+        return accessToken;
+      } else {
+        // Redirect to Spotify login if no token is available in the URL
+        const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}&show_dialog=true`;
+        window.location = accessUrl;
+      }
     }
-
-    const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
-    const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
-
-    if (accessTokenMatch && expiresInMatch) {
-      accessToken = accessTokenMatch[1];
-      const expiresIn = Number(expiresInMatch[1]);
-      window.setTimeout(() => accessToken = '', expiresIn * 1000);
-      window.history.pushState('Access Token', null, '/');
-
-      return accessToken;
-    } else {
-      const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}&show_dialog=true`;
-      window.location = accessUrl;
-    }
+    return accessToken;  // Return the token if it's already set    
   },
 
   async search(term) {
