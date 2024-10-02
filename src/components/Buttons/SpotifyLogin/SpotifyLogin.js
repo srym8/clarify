@@ -8,7 +8,7 @@ function SpotifyLogin() {
 
     const handleLogin = () => {
 
-        Spotify.betterLogin();
+        Spotify.getAccessToken();
 
     }
 
