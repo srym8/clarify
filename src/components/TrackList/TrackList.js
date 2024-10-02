@@ -25,24 +25,28 @@ function TrackList(props) {
 
     return (
         <>
-        {addRemoveDuplicates()}
-        <div className="TrackList">
-            {props.tracks.map((track) => {
-                return (
-                    <div className="Track">
-                    <Track
-                        track={track}
-                        onAdd={props.onAdd}
-                        onRemove={props.onRemove}
-                        isPlaylist={props.isPlaylist}
-                        id={track.id}
-                    />
-                    </div>
-                )
-            })}
-        </div>
+            {addRemoveDuplicates()}
+            <div className="TrackList">
+                {Array.isArray(props.tracks) && props.tracks.length > 0 ? (
+                    props.tracks.map((track) => {
+                        return (
+                            <div className="Track" key={track.id}>
+                                <Track
+                                    track={track}
+                                    onAdd={props.onAdd}
+                                    onRemove={props.onRemove}
+                                    isPlaylist={props.isPlaylist}
+                                    id={track.id}
+                                />
+                            </div>
+                        );
+                    })
+                ) : (
+                    <div>No tracks available.</div> // Fallback UI
+                )}
+            </div>
         </>
-    )
+    );
 }
 
 export default TrackList
