@@ -189,7 +189,7 @@ function App() {
         <div>
             <div className="App" data-testid="app-1">
 
-                <h1>Clarify DO LOGIN</h1>
+                <h1>Clarify DO LOGIN, PUT LOGIN AT THE FRONT SO YOU CAN'T SEARCH BEFORE YOU GET TOKEN</h1>
 
                 <Link to="/">Back to login</Link>
                 <Link to="/sort">To Testing</Link>
