@@ -23,6 +23,9 @@ const Spotify = {
         return accessToken;
       } else {
         // Redirect to Spotify login if no token is available in the URL
+
+        document.body.innerHTML = `<h1>Redirecting to Spotify for login...</h1>`;
+
         const accessUrl = `https://accounts.spotify.com/authorize?client_id=${clientId}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectUri}&show_dialog=true`;
         window.location = accessUrl;
       }
