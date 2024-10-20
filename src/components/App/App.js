@@ -59,11 +59,6 @@ function App() {
     }
 
     const sortResults = () => {
-        const ref = {}
-
-        for (let i of results) {
-            ref[i.name] = i.name[0].charCodeAt(0)
-        }
 
         let namesB = []
 
@@ -102,11 +97,6 @@ function App() {
     }
 
     const sortPTracks = () => {
-        const ref = {}
-
-        for (let i of pTracks) {
-            ref[i.name] = i.name[0].charCodeAt(0)
-        }
 
         let namesB = []
 
@@ -189,7 +179,7 @@ function App() {
         <div>
             <div className="App" data-testid="app-1">
 
-                <h1>Clarify DO LOGIN, PUT LOGIN AT THE FRONT SO YOU CAN'T SEARCH BEFORE YOU GET TOKEN</h1>
+                <h1>Clarify</h1>
 
                 <Link to="/">Back to login</Link>
                 <Link to="/sort">To Testing</Link>
