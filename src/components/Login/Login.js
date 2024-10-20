@@ -1,39 +1,28 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React from 'react';
 
 import "./Login.css";
 
+import Spotify from '../../Spotify/Spotify';
+
 function Login() {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("")
 
-    const handleEmail = (e) => {
-        e.preventDefault();
-        setEmail(e.target.value)
-    }
+    const handleLogin = () => {
 
-    const handlePassword = (p) => {
-        p.preventDefault();
-        setPassword(p.target.value)
-    }
-
-    let navigate = useNavigate();
-
-    const handleSubmit = () => {
-        if (email === password) {
-            navigate("/app")
-        }
+        Spotify.getAccessToken(true)
+        
     }
 
     return (
         <div className='Login'>
+
             <h1>Clarify</h1>
-            <form id='login-form' onSubmit={handleSubmit}>
-                <input className='field' placeholder='Enter Email' value={email} onChange={handleEmail}></input>
-                <input className='field' placeholder='Enter Password' value={password} onChange={handlePassword}></input>
-                <button type='submit' form='login-form'>Login</button>
-                <Link to="/app">To app</Link>
+
+            <form id='login-form'>
+
+                <button className='field' type='button' onClick={handleLogin}>Login</button>
+
             </form>
+
         </div>
     )
 }

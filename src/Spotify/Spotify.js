@@ -1,5 +1,5 @@
 const clientId = "4718e4f536b64fcda2004650287911a0";
-const redirectUri = 'https://clarify42.netlify.app/app';
+const redirectUri = 'http://localhost:3000/app';
 let accessToken;
 
 const Spotify = {
