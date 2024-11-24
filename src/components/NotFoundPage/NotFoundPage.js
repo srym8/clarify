@@ -1,3 +1,5 @@
+//If the user tries to navigate outside the predetermined path, this component will render, containing an error message, and a link back to the root page
+
 import React from "react";
 import { Link } from "react-router-dom";
 

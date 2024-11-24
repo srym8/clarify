@@ -19,7 +19,7 @@ function Playlist(props) {
             <TrackList
             sort={props.sort}
             remove={props.removePlaylist}
-            needsRem={true}
+            needsSortAndRemove={true}
             tracks={props.pTracks}
             onRemove={props.onRemove}
             isPlaylist={true}

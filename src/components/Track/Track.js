@@ -28,6 +28,8 @@ function Track(props) {
         )
     }
 
+    //The basis of how all tracks are rendered
+
      return (
         <div className="Track" data-testid="track-1">
             <div className="information">

@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 
 import "./SearchBar.css";
 
+import searchIcon from './search.png';
+
 function SearchBar(props) {
 
     const [query, setQuery] = useState("");
@@ -32,6 +34,7 @@ function SearchBar(props) {
     return (
         <div className="searchBar" data-testid="searchbar-1">
             <input name="bar" placeholder="Enter a Song or Artist" onChange={handleChange}></input>
+            <img className="icon" src={searchIcon} alt="searchicon" ></img>
             <button className="sButton" onClick={search}>Search</button>
         </div>
     )

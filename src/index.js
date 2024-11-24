@@ -1,3 +1,5 @@
+//Importing all the components that form a page container, necessary libraries and stylesheet
+
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
@@ -8,6 +10,8 @@ import NotFoundPage from './components/NotFoundPage/NotFoundPage';
 import reportWebVitals from './reportWebVitals';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+//Building the router object, setting the path of the pages, and what component is rendered for each one
 
 const router = createBrowserRouter([{
   path: "/",

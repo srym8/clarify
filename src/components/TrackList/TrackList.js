@@ -8,8 +8,10 @@ import RemoveDuplicates from "../Buttons/RemoveDuplicates/RemoveDuplicates";
 
 function TrackList(props) {
 
-    const addRemoveDuplicates = () => {
-        if(props.needsRem) {
+    //Incase of new trackList components elsewhere that don't require sort / remove duplicates buttons, trackList components will only render them if the Boolean parameter is True
+
+    const addRemoveDuplicatesAndSort = () => {
+        if(props.needsSortAndRemove) {
             return (
                 <div className="buttonRow">
                 <SortResults action={props.sort} />
@@ -23,9 +25,11 @@ function TrackList(props) {
         )
     }
 
+    //The foundation of how lists of tracks are rendered. Both search results and chosen playlist tracks will have their tracks rendered with this method
+
     return (
         <>
-        {addRemoveDuplicates()}
+        {addRemoveDuplicatesAndSort()}
         <div className="TrackList">
             {props.tracks.map((track) => {
                 return (
