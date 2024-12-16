@@ -1,18 +1,32 @@
+//Importing React Libraries
+
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+//Importing the style sheet
+
 import "./App.css";
+
+//Importing the child components to be rendered within the main App component
 
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 import SpotifyLogin from "../Buttons/SpotifyLogin/SpotifyLogin";
 
+// Importing the Spotify object containing methods for handling API requests and application functionality
+
 import Spotify from "../../Spotify/Spotify";
+
+//Importing the merge sort function
 
 import mergeSort from "../Sort/SortFunc";
 
+//The main App component definition
+
 function App() {
+
+    //Setting the state variables for the search results, playlist name and playlist tracks
 
     const [results, setresults] = useState([])
     const [pName, setPName] = useState("New")
@@ -22,6 +36,8 @@ function App() {
     const search = (query) => {
 
         Spotify.search(query).then(setresults)
+        console.log(`The results state variable is now set to:\n${results}`)       //TESTING TESTING TESTING TESTING TESTING
+        console.log(`Here is the data stored in the first track component:\n`)
 
     }
 
@@ -174,6 +190,8 @@ function App() {
 
         setPTracks(final)
     }
+
+    //Formatting the main App page with the child components
 
     return (
         <div>
