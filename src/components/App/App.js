@@ -36,8 +36,7 @@ function App() {
     const search = (query) => {
 
         Spotify.search(query).then(setresults)
-        console.log(`The results state variable is now set to:\n${results}`)       //TESTING TESTING TESTING TESTING TESTING
-        console.log(`Here is the data stored in the first track component:\n`)
+        
 
     }
 
@@ -50,6 +49,7 @@ function App() {
         } else {
             setPTracks((prevT) => [...prevT, track]);
         }
+        
     }
 
     const removeTrack = (track) => {

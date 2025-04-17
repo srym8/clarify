@@ -1,7 +1,7 @@
 //Storing the clientId and redirect URI
 
 const clientId = "4718e4f536b64fcda2004650287911a0";
-const redirectUri = 'http://localhost:3000/app';
+const redirectUri = 'https://clarify42.netlify.app/app';
 
 //Initialising the access token
 
@@ -28,7 +28,6 @@ const Spotify = {
     
         // Clean the URL by removing the token and expiration info for security reasons
         window.history.pushState('Access Token', null, '/');
-        console.log(`The new access token ${accessToken} has been stored`)                      //TESTING TESTING TESTING TESTING TESTING TESTING TESTING
         return accessToken;
       } else {
         // Redirect to Spotify login if no token is available in the URL
@@ -39,16 +38,13 @@ const Spotify = {
         window.location = accessUrl;
       }
     }
-    return accessToken;  // Return the token if it's already set    
+    return accessToken;  // Return the token if it's already set
   },
 
   //The function definition of a function that executes the search with a given query argument, to the parameter 'term'
 
   async search(term) {
-    console.log(`The parameter term has been set to: ${term}`)                                 //TESTING TESTING TESTING TESTING TESTING TESTING TESTING
     accessToken = this.getAccessToken();
-    console.log(`The access token being used is: ${accessToken}`)                              //TESTING TESTING TESTING
-    console.log(`Query object to send: headers: {Authorization: Bearer ${accessToken}}\nBeing sent to: https://api.spotify.com/v1/search?type=track&q=${term}`) //TESTING
 
 // Using a try block to handle potential errors while fetching search results from the Spotify API
 
@@ -59,20 +55,11 @@ const Spotify = {
         }
       });
       const jsonResponse = await response.json();
-      console.log(`The response converted to JSON: \n${jsonResponse.tracks.items}`)                         //TESTING TESTING TESTING
       if (!jsonResponse.tracks) {
-        console.log(`No tracks were found, returning []`)                                      //TESTING TESTING TESTING TESTING TESTING
         return [];
       }
-      let jsonFirst = jsonResponse.tracks.items[0] //TESTING TESTING TESTING
-      let trackObject = {
-        id: jsonFirst.id,
-        name: jsonFirst.name,
-        artists: jsonFirst.artists.map(artist => artist.name),
-        album: jsonFirst.album.name,
-        uri: jsonFirst.uri
-      }                                              
-      console.log(`Returning tracks with relevant data. For example, the first track returned will be:\n${JSON.stringify(trackObject)}`)  //TESTING TESTING
+
+
       return jsonResponse.tracks.items.map(track => ({
         id: track.id,
         name: track.name,
